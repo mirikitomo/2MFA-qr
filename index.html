@@ -83,20 +83,20 @@ h2 {
     <hr>
 
     <p>
-      <select class="form-control" id="type">
-        <option value="totp">Time based (TOTP)</option>
-        <option value="hotp">Counter based (HOTP)</option>
+      <select class="form-control" id="type" readonly="readonly">
+        <option value="totp">Time based (TOTP) </option>
+        <!--<option value="hotp">Counter based (HOTP)</option>-->
       </select>
     </p>
 
     <p><input class="form-control" type="search" id="secret" placeholder="Secret &mdash; Required" spellcheck="false"></p>
-    <p><input class="form-control" type="search" id="label" placeholder="Label &mdash; Required" spellcheck="false"></p>
-    <p><input class="form-control" type="search" id="issuer" placeholder="Issuer &mdash; Optional" list="issuers" spellcheck="false"></p>
+    <p><input class="form-control" type="search" id="label" value="Nice InContact AoU" readonly="readonly" spellcheck="false"></p>
+    <!-- <p><input class="form-control" type="search" id="issuer" placeholder="Issuer &mdash; Optional" list="issuers" spellcheck="false"></p> -->
     <p><input class="form-control" type="search" id="counter" placeholder="Initial counter &mdash; Defaults to 0" pattern="\d+" spellcheck="false"></p>
 
-    <div class="custom-control custom-checkbox">
+    <!-- <div class="custom-control custom-checkbox">
       <p><input class="custom-control-input" type="checkbox" id="advanced_options"><label class="custom-control-label" for="advanced_options">Advanced options</label></p>
-    </div>
+    </div> -->
 
     <div id="advanced_options_container">
       <p>Please note that the advanced options are not supported by the Google Authenticator app (all advanced options are ignored). Yubico Authenticator supports these advanced options.</p>
@@ -117,7 +117,7 @@ h2 {
     </div>
 
     <hr>
-    <p><input class="form-control" type="text" id="uri" placeholder="otpauth://" spellcheck="false"></p>
+    <p><input class="form-control" type="text" id="uri" placeholder="otpauth://" spellcheck="false" readonly="readonly"></p>
 
     <datalist id="issuers">
       <option>Amazon</option>
@@ -308,14 +308,15 @@ $("#uri").on("change keyup input", function() {
 
     <div id="app">
       <div id="app_code">123 456</div>
-      <div id="app_label">Issuer (label)</div>
+      <div id="app_label">Nice InContact</div>
     </div>
 
     <hr>
 
     <ul>
       <li>Made by <a href="https://stefansundin.github.io/">Stefan Sundin</a>.</li>
-      <li>Get <a href="https://github.com/stefansundin/2fa-qr">the source code</a>.</li>
+      <li>Customized by <a href="https://mirikitomo.github.io/steven-new-website/">Steven Chaparro</a>.</li>
+      <li>Get <a href="https://github.com/stefansundin/2fa-qr">the original source code</a>.</li>
       <li>Uses <a href="https://larsjung.de/jquery-qrcode/">jquery-qrcode</a>.</li>
       <li>See <a href="https://github.com/google/google-authenticator/wiki/Key-Uri-Format">the docs</a> for the URI format.</li>
     </ul>
